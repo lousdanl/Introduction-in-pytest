@@ -3,6 +3,20 @@ import string
 import pytest
 
 
+@pytest.fixture(scope='session')
+def get_dictionary():
+    test_user = dict(user_id='10', username='Test_0',
+                     email='test@gmail.com', city='Test_City', lang='ru'
+                     )
+    return test_user
+
+
+@pytest.fixture(scope='module', params=[11, 12, 13, 14])
+def get_random_string(request):
+    letters_digits = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters_digits) for i in range(request.param))
+
+
 @pytest.fixture(params=[10, 11, 12])
 def get_random_list(request):
     ran_numbers = []
@@ -13,16 +27,7 @@ def get_random_list(request):
 
 @pytest.fixture
 def get_set():
-    names_set_from_book = {'Wendy', 'Tinker Bell', 'Captain Hook.', 'Peter Pan', 'Lost Boys'}
+    names_set_from_book = {'Wendy', 'Tinker Bell', 'Captain Hook.',
+                           'Peter Pan', 'Lost Boys'
+                           }
     return names_set_from_book
-
-
-@pytest.fixture(scope='session')
-def get_dictionary():
-    test_user = dict(user_id='10', username='Test_0', email='test@gmail.com', city='Test_City', lang='ru')
-    return test_user
-
-
-@pytest.fixture(scope='session', params=[11, 12, 13, 14])
-def get_random_string(request):
-    return ''.join(random.choice(string.ascii_letters + string.digits) for i in range(request.param))
