@@ -1,6 +1,5 @@
 import pytest
 
-
 NEW_ID = [11, 12, 13, 14]
 NEW_NAME = ['Test_1', 'Test_2', 'Test_3', 'Test_4']
 

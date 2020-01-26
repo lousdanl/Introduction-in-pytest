@@ -1,6 +1,5 @@
 import pytest
 
-
 NEW_VALUE = ['o', 'E', 's', 'm', 'A', '7', 'X']
 
 
