@@ -1,6 +1,6 @@
 import random
-import pytest
 
+import pytest
 
 NUMBERS = [0, 1, 55, 99, 100]
 NUMBERS_ID = [0, 3, 5, 8]
@@ -23,7 +23,7 @@ def test_deleted_element(get_random_list, number_id):
     """
     list_length = len(get_random_list)
     del get_random_list[number_id]
-    assert len(get_random_list) == (list_length-1)
+    assert len(get_random_list) == (list_length - 1)
 
 
 def test_clear_list(get_random_list):
@@ -55,5 +55,5 @@ def test_sort_list(get_random_list):
     """
     get_random_list.sort()
     for number_id, number in enumerate(get_random_list):
-        if number_id < (len(get_random_list)-1):
-            assert get_random_list[number_id] <= get_random_list[number_id+1]
+        if number_id < (len(get_random_list) - 1):
+            assert get_random_list[number_id] <= get_random_list[number_id + 1]

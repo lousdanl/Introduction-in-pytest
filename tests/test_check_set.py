@@ -1,6 +1,5 @@
 import pytest
 
-
 NAMES = ['Wendy', 'Tinker Bell', 'Captain Hook.', 'Peter Pan', 'Lost Boys']
 
 
