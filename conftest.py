@@ -17,7 +17,7 @@ def get_random_string(request):
     return ''.join(random.choice(letters_digits) for i in range(request.param))
 
 
-@pytest.fixture(params=[10, 11, 12])
+@pytest.fixture(params=[10, 11, 12, 13])
 def get_random_list(request):
     ran_numbers = []
     for i in range(request.param):
